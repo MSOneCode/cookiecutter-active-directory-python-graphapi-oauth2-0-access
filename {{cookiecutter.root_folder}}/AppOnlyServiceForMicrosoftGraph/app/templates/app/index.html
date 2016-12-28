@@ -1,0 +1,19 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% if isConnected == 'true' %}
+<div>
+    <h1>{{msg}}</h1>
+    {% if request.session.access_token %}
+        <button class="btn btn-danger" onclick="window.location.href = '{% url 'disconnect' %}'">disconnect</button>
+    {% endif %}
+</div>
+{% else %}
+<div>
+    <h1>Click the "connect" button to get the access token from Microsoft Graph</h1>
+    <button class="btn btn-success" onclick="window.location.href = '{% url 'connect' %}'">connect</button>
+</div>
+{% endif %}
+
+
+{% endblock %}

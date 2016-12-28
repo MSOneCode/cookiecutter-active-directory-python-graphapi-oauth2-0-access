@@ -1,0 +1,31 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<body>
+    <button class="btn btn-default" onclick="window.location.href = '{% url 'add_user' %}'">create a new user</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Display Name</th>
+                <th>User Principal Name</th>
+                <th>Object ID</th>
+                <th>Account Enabled</th>
+                <th>Edit Link</th>
+                <th>Delete Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users_list %}
+            <tr>
+                <td>{{user.displayName}}</td>
+                <td>{{user.userPrincipalName}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.accountEnabled}}</td>
+                <td><a href="{% url 'edit_user' user.id %}">Edit</a></td>
+                <td><a href="{% url 'del_user' user.id %}">Del</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% endblock %}

@@ -1,0 +1,57 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% if isShowMsg == 'true' %}
+<div>
+    <h2>{{msg}}</h2>
+    <br />
+    <button class="btn btn-default" type="button" onclick="window.location.href = '{% url 'users' %}'" >back</button>
+</div>
+{% else %}
+<form method="post" action="{{ request.path }}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="displayName" class="control-label">display name</label>
+        <div>
+            <input type="text" name="displayName" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="mailNickname" class="control-label">mail nick name</label>
+        <div>
+            <input type="text" name="mailNickname"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username" class="control-label">principal name</label>
+        <div>
+            <input type="text" name="userPrincipalName"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username" class="control-label">password</label>
+        <div>
+            <input type="password" name="password"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="accountenabled" class="control-label">Account Enabled</label>
+        <div>
+            <span>True:</span><input type="radio" value="True" name="accountenabled" checked />
+            <span>False:</span><input type="radio" value="False" name="accountenabled" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="forcePasswordChangeOnNextLogin" class="control-label">Force Password Change on Next Login:</label>
+        <div>
+            <span>True:</span><input type="radio" value="True" name="forcePasswordChangeOnNextLogin" checked/>
+            <span>False:</span><input type="radio" value="False" name="forcePasswordChangeOnNextLogin" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">submit</button>
+    <button type="button" class="btn btn-default" onclick="window.location.href = '{% url 'users' %}'">cancel</button>
+</form>
+{% endif %}
+
+{% endblock %}

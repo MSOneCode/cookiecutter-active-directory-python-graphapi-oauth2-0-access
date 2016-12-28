@@ -1,0 +1,4 @@
+Django==1.9.2
+requests==2.9.1
+pypiwin32==219
+django-mssql==1.8 

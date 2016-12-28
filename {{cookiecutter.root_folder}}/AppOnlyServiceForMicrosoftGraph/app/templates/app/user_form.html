@@ -1,0 +1,32 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% if isShowMsg == 'true' %}
+<div>
+    <h2>{{msg}}</h2>
+    <br />
+    <button class="btn btn-default" type="button" onclick="window.location.href = '{% url 'users' %}'" >back</button>
+</div>
+{% else %}
+<h2>User of ID: {{ item.id }}.</h2>
+<form method="post" action="{{ request.path }}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="displayName" class="col-md-2 control-label">display name</label>
+        <div class="col-md-10">
+            <input type="text" name="displayName" value="{{ item.displayName }}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username" class="col-md-2 control-label">principal name</label>
+        <div class="col-md-10">
+            <input type="text" name="userPrincipalName" value="{{ item.userPrincipalName }}" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">submit</button>
+    <button type="button" class="btn btn-default" onclick="window.location.href = '{% url 'users' %}'">cancel</button>
+</form>
+{% endif %}
+
+{% endblock %}

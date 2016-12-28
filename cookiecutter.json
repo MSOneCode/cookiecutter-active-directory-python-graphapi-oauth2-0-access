@@ -1,0 +1,59 @@
+{
+	"_copy_without_render": ["*.js", "*.html"],
+	"root_folder": "active-directory-python-graphapi-oauth2-0-access",
+	"tenant_id": "",
+	"client_id": "",
+	"secret_key": "",
+	"db_host": ".",
+	"db_name": "test_db",
+	"db_user": "",
+	"db_password": "",
+	"db_port": "",
+	"_visual_studio": {
+		"root_folder": {
+			"label": "Root Folder",
+			"description": "Root folder for the sample",
+			"selector": "string"
+		},
+		"tenant_id": {
+			"label": "Azure Tenant Id",
+			"description": "Azure Tenant Id",
+			"selector": "string"
+		},
+		"client_id": {
+			"label": "Client Id",
+			"description": "Client Id",
+			"selector": "string"
+		},
+		"secret_key": {
+			"label": "Secret Key",
+			"description": "Secret Key",
+			"selector": "string"
+		},
+		"db_host": {
+			"label": "Database Host",
+			"description": "Database Host",
+			"selector": "string"
+		},
+		"db_name": {
+			"label": "Database Name",
+			"description": "Database Name",
+			"selector": "string"
+		},
+		"db_user": {
+			"label": "Database User Name",
+			"description": "Database User Name",
+			"selector": "string"
+		},
+		"db_password": {
+			"label": "Database Password",
+			"description": "Database Password",
+			"selector": "string"
+		},
+		"db_port": {
+			"label": "Database Port",
+			"description": "Database Port",
+			"selector": "string"
+		}
+	}
+}
