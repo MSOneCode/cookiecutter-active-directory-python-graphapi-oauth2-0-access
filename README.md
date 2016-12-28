@@ -77,7 +77,16 @@ The Graph API is compatible with OData V3 and enables applications to construct 
 
 - Then you can press **F5** to run the sample in Visual Studio.
 
-### Option 2: Use your other favorite IDEs to modify the scripts and use node.js command to run the sample
+### Option 2: Create SQL Server database and initial Django db.
+- Create a SQL Server Database ‘test_db’.
+- Modify the configurations of database connection in **settings.py**.
+	![](./Images/f1.png)
+- Run 'python manage.py migrate' to initial Django db.
+	![](./Images/f2.png)
+	![](./Images/f3.png)
+	![](./Images/f4.png)
+
+### Option 3: Use your other favorite IDEs to modify the scripts and use node.js command to run the sample
 - Modify the configurations of AAD (via the same steps method above) in **config.py**.
 - Install dependencies via **requirements.txt** by running `pip install -r requirements.txt`.
 - Start the development server by running `python manage.py runserver`.
